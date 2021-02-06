@@ -8,6 +8,7 @@ import {
 export default class AlterProviderFieldToProviderId1604709033011
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
     await queryRunner.dropColumn('appointments', 'provider');
     await queryRunner.addColumn(
       'appointments',
