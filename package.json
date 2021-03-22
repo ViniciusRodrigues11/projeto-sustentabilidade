@@ -1,5 +1,5 @@
 {
-  "name": "primeiro-projeto-node",
+  "name": "sustentabilidade",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -59,9 +59,6 @@
     "ioredis": "^4.19.4",
     "jsonwebtoken": "^8.5.1",
     "mime": "^2.5.0",
-    "mongodb": "^3.6.3",
-    "multer": "^1.4.2",
-    "nodemailer": "^6.4.17",
     "pg": "^8.3.3",
     "rate-limiter-flexible": "^2.2.1",
     "redis": "^3.0.2",
