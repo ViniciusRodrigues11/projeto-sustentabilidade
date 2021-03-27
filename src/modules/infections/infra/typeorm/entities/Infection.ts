@@ -4,27 +4,29 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
+  ManyToOne,
 } from 'typeorm';
 
-import { Exclude } from 'class-transformer';
+import Desease from './Desease';
 
-@Entity('users')
-class User {
+@Entity('infection')
+class Infection {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  name: string;
+  latitude: string;
 
   @Column()
-  email: string;
+  longitude: string;
 
   @Column()
-  @Exclude()
-  password: string;
+  disease_id: string;
 
-  @Column()
-  avatar: string;
+  @ManyToOne(() => Desease)
+  @JoinColumn({ name: 'desease_id' })
+  desease: Desease;
 
   @CreateDateColumn()
   created_at: Date;
@@ -33,4 +35,4 @@ class User {
   updated_at: Date;
 }
 
-export default User;
+export default Infection;
