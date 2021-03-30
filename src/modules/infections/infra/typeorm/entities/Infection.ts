@@ -10,7 +10,7 @@ import {
 
 import Desease from './Desease';
 
-@Entity('infection')
+@Entity('infections')
 class Infection {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -22,7 +22,7 @@ class Infection {
   longitude: string;
 
   @Column()
-  disease_id: string;
+  desease_id: string;
 
   @ManyToOne(() => Desease)
   @JoinColumn({ name: 'desease_id' })

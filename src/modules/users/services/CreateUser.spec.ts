@@ -34,14 +34,14 @@ describe('CreateUser', () => {
   it('should not be able to create a new user with same email', async () => {
     await createUserService.execute({
       name: 'Jhon Doe',
-      email: 'jhondoe@example.com',
+      email: 'jhondoe3@example.com',
       password: '123456',
     });
 
     expect(
       createUserService.execute({
         name: 'Jhon Doe 2',
-        email: 'jhondoe@example.com',
+        email: 'jhondoe3@example.com',
         password: '123456',
       }),
     ).rejects.toBeInstanceOf(AppError);

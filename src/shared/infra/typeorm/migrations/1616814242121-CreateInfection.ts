@@ -63,5 +63,7 @@ export default class CreateInfection1616814242121
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('infections');
+    await queryRunner.dropForeignKey('infections', 'InectionDesease');
+    await queryRunner.dropColumn('infections', 'desease_id');
   }
 }

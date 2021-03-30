@@ -1,5 +1,5 @@
 import IUserRepository from '@modules/users/repositories/IUserRepository';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 import IFindAllProviderDTO from '@modules/users/dtos/IFindAllProvidersDTO';
 import User from '../../infra/typeorm/entities/User';
