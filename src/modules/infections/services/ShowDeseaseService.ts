@@ -1,6 +1,5 @@
 import { inject, injectable } from 'tsyringe';
 import CacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
-
 import { classToClass } from 'class-transformer';
 import IDeseaseRepository from '../repositories/IDeseaseRepository';
 import Desease from '../infra/typeorm/entities/Desease';

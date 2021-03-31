@@ -1,4 +1,5 @@
 import { inject, injectable } from 'tsyringe';
+import CacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import Infection from '../infra/typeorm/entities/Infection';
 import IInfectionRepository from '../repositories/IInfectionRepository';
 
@@ -12,6 +13,9 @@ class CreateInfectionService {
   constructor(
     @inject('InfectionRepository')
     private infectionRepository: IInfectionRepository,
+
+    @inject('CacheProvider')
+    private cacheProvider: CacheProvider,
   ) {}
 
   public async execute({
@@ -24,6 +28,8 @@ class CreateInfectionService {
       longitude,
       desease_id,
     });
+
+    this.cacheProvider.invalidatePrefix('infection');
 
     return infection;
   }
